@@ -80,6 +80,8 @@ scheduler = create_scheduler_from_plan(
 
 ## All Schedulers (17)
 
+> **Detailed API reference** with formulas, parameters, and examples: [docs/schedulers.md](docs/schedulers.md)
+
 | Scheduler | Description | Paper | Year |
 |---|---|---|:---:|
 | `CosineWithWarmupScheduler` | Linear warmup + cosine decay (no restart) — the modern default | — | — |
