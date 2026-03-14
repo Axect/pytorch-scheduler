@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "pytorch-scheduler"
+abstract: "A comprehensive, research-driven collection of learning rate schedulers for PyTorch"
+authors:
+  - family-names: "Kim"
+    given-names: "Tae-Geun"
+    alias: "axect"
+repository-code: "https://github.com/Axect/pytorch-scheduler"
+url: "https://pypi.org/project/pytorch-scheduler/"
+license: Apache-2.0
+version: 0.2.1
+date-released: "2026-03-14"
+keywords:
+  - pytorch
+  - learning-rate
+  - scheduler
+  - deep-learning
+  - optimization
