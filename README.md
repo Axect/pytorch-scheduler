@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/pytorch-scheduler)](https://pypi.org/project/pytorch-scheduler/)
 [![License](https://img.shields.io/github/license/axect/pytorch-scheduler)](LICENSE)
 
-A comprehensive, research-driven collection of learning rate schedulers for PyTorch — with 17 ready-to-use schedulers, composable warmup wrappers, opinionated presets, and first-class paper references.
+A comprehensive, research-driven collection of learning rate schedulers for PyTorch — with 18 ready-to-use schedulers, composable warmup wrappers, opinionated presets, and first-class paper references.
 
 ![All Schedulers](assets/all_schedulers.png)
 
@@ -78,7 +78,7 @@ scheduler = create_scheduler_from_plan(
 )
 ```
 
-## All Schedulers (17)
+## All Schedulers (18)
 
 > **Detailed API reference** with formulas, parameters, and examples: [docs/schedulers.md](docs/schedulers.md)
 
@@ -101,6 +101,7 @@ scheduler = create_scheduler_from_plan(
 | `FlatCosineScheduler` | Flat phase at `base_lr` then cosine annealing | — | — |
 | `PolynomialScheduler` | Polynomial decay with optional cycling | — | — |
 | `ChebyshevScheduler` | Non-monotonic schedule using Chebyshev nodes | — | — |
+| `IdentityScheduler` | No-op scheduler — keeps LR constant (baseline) | — | — |
 
 ## Scheduler Cards
 
@@ -271,7 +272,7 @@ fig.savefig("comparison.png", dpi=300)
 from pytorch_scheduler import create_scheduler, create_scheduler_from_plan, load_scheduler, get_supported_schedulers
 
 # List available schedulers
-print(get_supported_schedulers())            # all 17
+print(get_supported_schedulers())            # all 18
 print(get_supported_schedulers("*cosine*"))  # pattern matching
 
 # Load by name

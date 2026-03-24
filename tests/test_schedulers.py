@@ -121,6 +121,12 @@ SCHEDULER_PARAMS = [
         100,
         id="WarmupHoldCosineScheduler",
     ),
+    pytest.param(
+        ps.IdentityScheduler,
+        {},
+        100,
+        id="IdentityScheduler",
+    ),
 ]
 
 
@@ -291,6 +297,7 @@ def test_scheduler_multi_param_group(cls, kwargs, steps):
         (ps.LinearDecayScheduler, {"total_steps": 100}),  # warmup_steps=0 default
         (ps.PowerDecayScheduler, {"total_steps": 100}),  # warmup_steps=0 default
         (ps.PolynomialScheduler, {"total_steps": 100}),  # warmup_steps=0 default
+        (ps.IdentityScheduler, {}),
     ],
 )
 def test_no_warmup_step0_equals_base_lr(cls, kwargs):

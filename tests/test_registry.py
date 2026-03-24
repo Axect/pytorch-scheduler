@@ -32,6 +32,8 @@ EXPECTED_NAMES = sorted(
         "flatcosinescheduler",
         "hyperbolic",
         "hyperboliclrscheduler",
+        "identity",
+        "identityscheduler",
         "inverse_sqrt",
         "inversesqrtscheduler",
         "k_decay",
@@ -68,12 +70,12 @@ def _make_optimizer(lr: float = 0.1) -> torch.optim.SGD:
 # ---------------------------------------------------------------------------
 
 
-def test_scheduler_list_has_17_entries():
-    assert len(SCHEDULER_LIST) == 17
+def test_scheduler_list_has_18_entries():
+    assert len(SCHEDULER_LIST) == 18
 
 
-def test_schedulers_dict_has_34_entries():
-    assert len(SCHEDULERS) == 34
+def test_schedulers_dict_has_36_entries():
+    assert len(SCHEDULERS) == 36
 
 
 def test_schedulers_dict_keys_are_lowercase():
@@ -193,10 +195,10 @@ def test_create_scheduler_smoke(name, kwargs):
 # ---------------------------------------------------------------------------
 
 
-def test_get_supported_schedulers_returns_all_34():
-    """get_supported_schedulers() with default pattern should return 34 names."""
+def test_get_supported_schedulers_returns_all_36():
+    """get_supported_schedulers() with default pattern should return 36 names."""
     names = get_supported_schedulers()
-    assert len(names) == 34
+    assert len(names) == 36
 
 
 def test_get_supported_schedulers_sorted():

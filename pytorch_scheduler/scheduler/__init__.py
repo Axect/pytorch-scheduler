@@ -12,6 +12,7 @@ from pytorch_scheduler.scheduler.cosine_annealing import CosineAnnealingWarmupRe
 from pytorch_scheduler.scheduler.cosine_warmup import CosineWithWarmupScheduler
 from pytorch_scheduler.scheduler.flat_cosine import FlatCosineScheduler
 from pytorch_scheduler.scheduler.hyperbolic import ExpHyperbolicLRScheduler, HyperbolicLRScheduler
+from pytorch_scheduler.scheduler.identity import IdentityScheduler
 from pytorch_scheduler.scheduler.inverse_sqrt import InverseSqrtScheduler
 from pytorch_scheduler.scheduler.k_decay import KDecayScheduler
 from pytorch_scheduler.scheduler.linear_decay import LinearDecayScheduler
@@ -42,6 +43,7 @@ SCHEDULER_LIST: list[type] = [
     PowerDecayScheduler,
     CosineWithWarmupScheduler,
     WarmupHoldCosineScheduler,
+    IdentityScheduler,
 ]
 
 SCHEDULERS: dict[str, type] = {cls.__name__.lower(): cls for cls in SCHEDULER_LIST}
@@ -53,6 +55,7 @@ SCHEDULERS["cosine_with_warmup"] = CosineWithWarmupScheduler
 SCHEDULERS["exp_hyperbolic"] = ExpHyperbolicLRScheduler
 SCHEDULERS["flat_cosine"] = FlatCosineScheduler
 SCHEDULERS["hyperbolic"] = HyperbolicLRScheduler
+SCHEDULERS["identity"] = IdentityScheduler
 SCHEDULERS["inverse_sqrt"] = InverseSqrtScheduler
 SCHEDULERS["k_decay"] = KDecayScheduler
 SCHEDULERS["linear_decay"] = LinearDecayScheduler
@@ -153,6 +156,7 @@ __all__ = [
     "ExpHyperbolicLRScheduler",
     "FlatCosineScheduler",
     "HyperbolicLRScheduler",
+    "IdentityScheduler",
     "InverseSqrtScheduler",
     "KDecayScheduler",
     "LinearDecayScheduler",

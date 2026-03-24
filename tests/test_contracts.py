@@ -99,6 +99,10 @@ SCHEDULER_CONFIGS: dict[type, dict] = {
         "kwargs": {"total_steps": 200, "warmup_steps": 20, "hold_steps": 80, "min_lr": 0.0},
         "total_steps": 200,
     },
+    ps.IdentityScheduler: {
+        "kwargs": {},
+        "total_steps": 200,
+    },
 }
 
 # Build parametrize list in same order as SCHEDULER_LIST for consistent naming

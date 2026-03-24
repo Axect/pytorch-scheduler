@@ -10,8 +10,8 @@ authors:
 repository-code: "https://github.com/Axect/pytorch-scheduler"
 url: "https://pypi.org/project/pytorch-scheduler/"
 license: Apache-2.0
-version: 0.2.1
-date-released: "2026-03-14"
+version: 0.2.2
+date-released: "2026-03-24"
 keywords:
   - pytorch
   - learning-rate

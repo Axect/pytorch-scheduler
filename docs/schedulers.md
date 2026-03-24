@@ -1,6 +1,6 @@
 # Scheduler Reference
 
-Detailed API reference for all 17 schedulers, warmup wrapper, and experimental features.
+Detailed API reference for all 18 schedulers, warmup wrapper, and experimental features.
 
 ---
 
@@ -25,6 +25,7 @@ Detailed API reference for all 17 schedulers, warmup wrapper, and experimental f
 - [ExpHyperbolicLRScheduler](#exp-hyperbolic-lr) — Log-space hyperbolic decay (2024)
 - [PolynomialScheduler](#polynomial) — Polynomial decay with optional cycling
 - [ChebyshevScheduler](#chebyshev) — Non-monotonic Chebyshev node schedule
+- [IdentityScheduler](#identity) — No-op constant LR (baseline)
 
 **Wrappers & Utilities**
 
@@ -903,6 +904,40 @@ scheduler = ChebyshevScheduler(
     total_steps=10000,
     min_lr=1e-6,
 )
+```
+
+---
+
+<a id="identity"></a>
+### IdentityScheduler
+
+No-op scheduler that returns the optimizer's base learning rate unchanged at every step.
+Useful as a control baseline in ablation studies, or when a scheduler interface is
+required by a training loop but no actual LR scheduling is desired.
+
+**Formula:**
+
+```
+lr(t) = base_lr   for all t
+```
+
+**Parameters:**
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `optimizer` | `Optimizer` | required | Wrapped optimizer |
+| `last_epoch` | `int` | `-1` | Index of the last step (-1 = before first step) |
+
+**Example:**
+
+```python
+from pytorch_scheduler import IdentityScheduler
+
+scheduler = IdentityScheduler(optimizer)
+
+for step in range(total_steps):
+    loss = train_step(model, optimizer)
+    scheduler.step()  # LR stays constant
 ```
 
 ---
